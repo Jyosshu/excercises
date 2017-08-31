@@ -737,11 +737,17 @@ public class AfternoonExercises {
 			if ((b > c) && (c >b)) {
 				return true;
 			}
+			else if ((b > a) && (c > b) ) {
+				return true;
+			}
+			else {
+				return false;
+			}
 		}
 		else {
 		return false;
 		}
-		
+	
 	}
 
 	/*
@@ -754,9 +760,25 @@ public class AfternoonExercises {
 	 */
 	public boolean inOrderEqual(int a, int b, int c, boolean equalOk) {
 		if (equalOk == true) {
-			
+			if ((a <= b) && (b <= c) ) {
+				return true;
+			}
+			else {
+				return false;
+			}	
 		}
-		return false;
+		else if (equalOk == false) {
+			if ((a < b) && (b < c)) {
+				return true;
+			}
+			else {
+				return false;
+			}
+		}
+		else {
+			return false;
+		}
+		
 	}
 
 	/*
@@ -773,6 +795,14 @@ public class AfternoonExercises {
 				sum = a + b + c;
 				return sum;
 			}
+			else if (a == c) {
+				sum = b;
+				return sum;
+			}
+			else if (b == c) {
+				sum = a;
+				return sum;
+			}
 			else {
 				sum = a + b;
 				return sum;
@@ -783,14 +813,15 @@ public class AfternoonExercises {
 				sum = b + c + a;
 						return sum;
 			}
+			else if (a == b) {
+				sum = c;
+				return c;
+			}
 			else {
 				sum = b + c; 
 				return sum;
 			}
 		}
-/*		else if ((a != c)) {
-			if (!)
-		} */
 		else {
 			return 0;
 		}
@@ -808,7 +839,64 @@ public class AfternoonExercises {
 	 luckySum(13, 13, 3) → 0
 	 */
 	public int luckySum(int a, int b, int c) {
-		return 0;
+		
+		if (a == 13 || b == 13 || c == 13) {
+			
+			if (a == 13) {
+				if (b != 13 && c != 13) {
+				 return c;
+				}
+				else if (b != 13 && c == 13) {
+					return 0;
+				}
+				else if (b == 13 && c != 13) {
+					return 0;
+				}
+				else {
+					return 0;
+				}
+			}
+			else if (b == 13) {
+				if (a != 13 && c != 13) {
+					return a ;
+				}
+				else if (a != 13 && c == 13) {
+					return a;
+				}
+				else if (a == 13 && c != 13) {
+					return 0;
+				}
+				else {
+					return 0;
+				}
+			}
+			else if (c == 13) {
+				if (a != 13 && b != 13) {
+					return a + b;
+				}
+				else if (a != 13 && b == 13) {
+					return a;
+				}
+				else if (a == 13 && b != 13) {
+					return b;
+				}
+				else {
+					return 0;
+				}
+			}
+			else {
+				return 0;
+			}
+		}
+			
+		else if (a != 13 && b != 13 && c != 13) {
+				return a + b + c;
+			}
+		else {
+			return 0;
+			}
+		}
+		
 	}
 
-}
+
