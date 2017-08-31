@@ -10,7 +10,12 @@ public class AfternoonExercises {
 	 firstLast6([13, 6, 1, 2, 3]) → false
 	 */
 	public boolean firstLast6(int[] nums) {
+		if ((nums[0] == 6) || (nums[nums.length -1] == 6)) {
+			return true;
+		}
+		else {
 		return false;
+		}
 	}
 
 	/*
@@ -21,7 +26,12 @@ public class AfternoonExercises {
 	 sameFirstLast([1, 2, 1]) → true
 	 */
 	public boolean sameFirstLast(int[] nums) {
+		if ((nums.length >= 1) && (nums[0] == nums[nums.length - 1])) {
+			return true;
+		}
+		else {
 		return false;
+		}
 	}
 
 	/*
@@ -29,7 +39,9 @@ public class AfternoonExercises {
 	 makePi() → [3, 1, 4]
 	 */
 	public int[] makePi() {
-		return new int[] {};
+		int arrayPi[] = {3, 1, 4};
+		
+		return arrayPi;
 	}
 
 	/*
@@ -40,7 +52,13 @@ public class AfternoonExercises {
 	 commonEnd([1, 2, 3], [1, 3]) → true
 	 */
 	public boolean commonEnd(int[] a, int[] b) {
+		if ((a[0] == b[0]) || (a[a.length - 1] == b[b.length - 1])) {
+			
+				return true;
+			}
+		else {
 		return false;
+		}
 	}
 
 	/*
@@ -50,7 +68,11 @@ public class AfternoonExercises {
 	 sum3([7, 0, 0]) → 7
 	 */
 	public int sum3(int[] nums) {
-		return 0;
+		int sum = 0;
+		for (int i = 0; i < 3; i++) {
+			sum += nums[i];
+		}
+		return sum;
 	}
 
 	/*
@@ -61,7 +83,15 @@ public class AfternoonExercises {
 	 rotateLeft3([7, 0, 0]) → [0, 0, 7]
 	 */
 	public int[] rotateLeft3(int[] nums) {
-		return new int[] {};
+		int tempArrayVar;
+		tempArrayVar = nums[0];
+		
+		for (int i = 0; i < (nums.length - 1); i++) {
+			nums[i] = nums[i + 1];	
+		}
+		
+		nums[nums.length - 1] = tempArrayVar;
+		return nums;
 	}
 
 	/*
@@ -72,7 +102,13 @@ public class AfternoonExercises {
 	 reverse3([7, 0, 0]) → [0, 0, 7]
 	 */
 	public int[] reverse3(int[] nums) {
-		return new int[] {};
+	
+		int[] reverseArray = new int[nums.length];
+		
+		for (int i = 0, k = nums.length -1; k >= 0; i++, k--) {
+			reverseArray[i] = nums[k];
+		}
+		return reverseArray;
 	}
 
 	/*
@@ -83,7 +119,34 @@ public class AfternoonExercises {
 	 maxEnd3([2, 11, 3]) → [3, 3, 3]
 	 */
 	public int[] maxEnd3(int[] nums) {
-		return new int[] {};
+		int tempVar;
+		
+		if (nums[0] > nums[nums.length -1]) {
+			tempVar = nums[0];
+				
+			for (int i = 0; i < nums.length; i++) {
+				nums[i] = tempVar;
+			}
+			
+			return nums;
+
+		}
+		else if (nums[0] < nums[nums.length - 1]) {
+			tempVar = nums[nums.length -1];
+			
+			for (int i = 0; i < nums.length; i++) {
+				 nums[i] = tempVar;
+			}
+			
+			return nums;
+			
+		}
+		else {
+			return nums;
+		}
+		
+		
+		
 	}
 
 	/*
@@ -94,7 +157,25 @@ public class AfternoonExercises {
 	 sum2([1, 1, 1, 1]) → 2
 	 */
 	public int sum2(int[] nums) {
-		return 0;
+		int sum = 0;
+		
+		if (nums.length == 0) {
+			return 0;
+		}
+		else if (nums.length < 2) {
+			
+			for (int i = 0; i < nums.length -1; i++) {
+				sum += nums[i];
+			}
+			return sum;
+		}
+		else {
+			for (int i = 0; i < 2; i++) {
+				sum += nums[i];
+			}
+			return sum;
+		}
+
 	}
 
 	/*
@@ -105,7 +186,12 @@ public class AfternoonExercises {
 	 middleWay([5, 2, 9], [1, 4, 5]) → [2, 4]
 	 */
 	public int[] middleWay(int[] a, int[] b) {
-		return new int[] {};
+		int[] middleArray = new int[2];
+		
+		middleArray[0] = a[1];
+		middleArray[1] = b[1];
+		
+		return middleArray;
 	}
 
 	/*
@@ -116,7 +202,17 @@ public class AfternoonExercises {
 	 countEvens([1, 3, 5]) → 0
 	 */
 	public int countEvens(int[] nums) {
-		return 0;
+		int counter = 0;
+		
+		for (int i = 0; i < nums.length; i++ ) {
+			if (nums[i] % 2 == 0) {
+				counter++;
+			}
+			else {
+				return counter;
+			}
+		}
+		return counter;
 	}
 
 	/*
