@@ -202,17 +202,17 @@ public class AfternoonExercises {
 	 countEvens([1, 3, 5]) → 0
 	 */
 	public int countEvens(int[] nums) {
-		int counter = 0;
-		
+		int evenNum = 0;
 		for (int i = 0; i < nums.length; i++ ) {
 			if (nums[i] % 2 == 0) {
-				counter++;
+				evenNum++;
 			}
 			else {
-				return counter;
+				 evenNum += 0;
 			}
+			//return evenNum = k;
 		}
-		return counter;
+		return evenNum;
 	}
 
 	/*
@@ -224,7 +224,19 @@ public class AfternoonExercises {
 	 sum13([1, 2, 2, 1, 13]) → 6
 	 */
 	public int sum13(int[] nums) {
-		return 0;
+		int sum = 0;
+		
+		for (int i = 0; i < nums.length; i++) {
+			//System.out.println(nums[i]);
+			if (nums[i] != 13) {
+				sum += nums[i];
+			}
+			else {
+				return sum;
+			}
+			
+		}
+		return sum;
 	}
 
 	/*
@@ -234,6 +246,14 @@ public class AfternoonExercises {
 	 has22([2, 1, 2]) → false
 	 */
 	public boolean has22(int[] nums) {
+		
+		for (int i = 0, k = 1; k < nums.length; i++, k++) {
+
+			if ((nums[i] == 2) && (nums[k] == 2)) {
+				return true;
+			}
+			
+		}
 		return false;
 	}
 	
@@ -244,6 +264,21 @@ public class AfternoonExercises {
 	 lucky13([1, 2, 4]) → false
 	 */
 	public boolean lucky13(int[] nums) {
+		
+		for (int i = 0; i < nums.length; i++) {
+			if (nums[i] != 1) {
+				if (nums[i] != 3) {
+					return true;
+				}
+				else { 
+					return false;
+				}
+			}
+			else {
+				return false;
+			}
+
+		}
 		return false;
 	}
 
@@ -254,7 +289,21 @@ public class AfternoonExercises {
 	 sum28([1, 2, 3, 4]) → false
 	 */
 	public boolean sum28(int[] nums) {
-		return false;
+		int sum = 0;
+		
+		for (int i = 0; i < nums.length; i++) {
+			if (nums[i] == 2) {
+				sum += nums[i];
+			}
+			
+		}
+		System.out.println(sum);
+		if ((sum == 8) && (i == nums.length)) {
+			return true;
+		}
+		else {
+			return false;
+		}
 	}
 
 }
