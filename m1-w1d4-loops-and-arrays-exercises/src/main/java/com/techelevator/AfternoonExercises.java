@@ -290,13 +290,18 @@ public class AfternoonExercises {
 	 */
 	public boolean sum28(int[] nums) {
 		int sum = 0;
+		int i = 0; 
 		
-		for (int i = 0; i < nums.length; i++) {
+		while (i < nums.length) {
 			if (nums[i] == 2) {
 				sum += nums[i];
+				i++;
 			}
-			
+			else if (nums[i] != 2) {
+				i++;
+			}
 		}
+		
 		System.out.println(sum);
 		if ((sum == 8) && (i == nums.length)) {
 			return true;
