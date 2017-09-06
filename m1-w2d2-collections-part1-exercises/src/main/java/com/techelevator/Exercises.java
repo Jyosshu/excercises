@@ -280,8 +280,8 @@ public class Exercises {
 		newSeatList.addAll(elevenToTwenty);
 		newSeatList.addAll(twentyoneToThirty);
 		
-		System.out.println(twentyoneToThirty);
-		System.out.println(newSeatList);
+		//System.out.println(twentyoneToThirty);
+		//System.out.println(newSeatList);
 		
 		return newSeatList;
 	}
