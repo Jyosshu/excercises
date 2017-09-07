@@ -186,7 +186,7 @@ public class Exercises {
 		for (int i = 0; i < integerArray.length; i++) {
 			if ((integerArray[i] % 3 !=  0) && (integerArray[i] % 5 != 0)) {
 				stringList.add(Integer.toString(integerArray[i]));
-				System.out.println(stringList.get(i));
+				//System.out.println(stringList.get(i));
 			}
 			else if ((integerArray[i] % 3 == 0) && (integerArray[i] % 5 != 0)) {
 				stringList.add("Fizz");
