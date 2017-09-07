@@ -478,7 +478,7 @@ public class Exercises {
 			for (int i = 0; i < str.length() - 2; i++) {
 				
 				String testString = new String(str.substring(str.length() -2, str.length()));
-				System.out.println(testString);
+				//System.out.println(testString);
 				if (str.length() <= 2)  {
 					 counter = 0;
 				}
@@ -501,12 +501,13 @@ public class Exercises {
 	public String stringX(String str) {
 		String newString = new String();
 		
-		for (int i = 0; i > str.length(); i++) {
-			if ((str.substring(0, 1).contains(x) str.equals("x"))
+		if (str.length() < 3) {
+			return str;
 		}
-		
-		
-		return newString;
+		newString = str.substring(1, str.length() - 1);
+		newString = newString.replace("x", "");
+		//System.out.println(newString);
+		return str.charAt(0) + newString + str.charAt(str.length() - 1);
 	}
 
 	/*
