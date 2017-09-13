@@ -73,12 +73,15 @@ public class SmartPhone {
      * @param numberOfMinutesToTalk 1 minute drains 1% of battery
      * @return True if the call could be placed, false otherwise
      */
-    public boolean Call(String phoneNumberToCall, int numberOfMinutesToTalk)
-    {                        
-        onCall = true;
-        batteryCharge -= numberOfMinutesToTalk;
-
-        return true;
+    public boolean Call(String phoneNumberToCall, int numberOfMinutesToTalk) {      
+    	if ((phoneNumberToCall.length() == 10) && (batteryCharge >= numberOfMinutesToTalk)) {
+    		onCall = true;
+    		batteryCharge -= numberOfMinutesToTalk;
+    		return true;
+    	}
+    	else {
+    		return false;
+    	}
     }
 
     /**
@@ -102,7 +105,7 @@ public class SmartPhone {
      */
     public void RechargeBattery()
     {
-        batteryCharge = 95;
+        batteryCharge = 100;
     }
 
 }
