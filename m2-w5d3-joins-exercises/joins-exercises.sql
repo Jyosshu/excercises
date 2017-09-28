@@ -182,8 +182,8 @@ JOIN film_actor fa ON fa.film_id = f.film_id
 JOIN actor a ON a.actor_id = fa.actor_id
 JOIN inventory i ON i.film_id = f.film_id
 JOIN rental r ON r.inventory_id = i.inventory_id
-GROUP BY actor_name
-ORDER BY rentals DESC LIMIT 10 OFFSET 1
+GROUP BY a.actor_id
+ORDER BY rentals DESC LIMIT 10
 
 -- 20. The top 5 “Comedy” actors ranked by number of rentals of films in the “Comedy” category starring that actor 
 -- (#1 should have 87 rentals and #5 should have 72 rentals)
