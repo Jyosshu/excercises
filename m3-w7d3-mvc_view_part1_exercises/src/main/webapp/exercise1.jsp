@@ -37,6 +37,32 @@
 				
 				see exercise1-fizzbuzz.png for example output
 			 --%>
+			 <c:forEach begin="1" end="100" step="1" var="counter">
+			 
+			 <c:set var="rowClassAttribute" value="" />
+			 <c:set var="output" value="${ counter}"/>
+			 
+			 <c:choose>
+			 <c:when test="${(counter % 15 == 0)}">
+			 		<c:set var="rowClassAttribute" value="fizzbuzz"/>
+			 		<c:set var="output" value="FizzBuzz!"/>
+			 	</c:when>
+			 	<c:when test="${counter % 3 == 0}">
+			 		<c:set var="rowClassAttribute" value="fizz"/>
+			 		<c:set var="output" value="Fizz!"/>
+			 	</c:when>
+			 	<c:when test="${counter % 5 == 0}">
+			 		<c:set var="rowClassAttribute" value="buzz"/>
+			 		<c:set var="output" value="Buzz!"/>
+			 	</c:when>
+			 	
+			 </c:choose>
+			 
+			 <li class="${rowClassAttribute}">
+			 	<c:out value="${output}"/>
+			 </li>
+			 
+			 </c:forEach>
 		</ul>
 	</body>
 </html>

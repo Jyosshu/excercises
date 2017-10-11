@@ -24,6 +24,13 @@
 			 
 			See exercise3-echo.png for example output
 		 --%>
+		 <c:forEach begin="1" end="${param.count}" step="1" var="counter">
+	
+		 	<li style="font-size: ${(param.count - counter +1)}pt"> 
+		 		<c:out value="${param.word}"/> 
+		 	</li>
+		 
+		 </c:forEach>
 		</ul>
 		
 	</body>
