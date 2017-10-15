@@ -1,12 +1,30 @@
 body {
 	width: 100%;
 	background-color: #212121;
-	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS',
+	font-family:  Helvetica, Calibri, 'Trebuchet MS',
 		sans-serif;
+	
 }
 
 body, header, nav {
 	margin: 0px;
+}
+
+a {
+	color: black;
+	text-decoration: none;
+}
+
+.td a {
+	font-weight: normal;
+}
+th {
+	text-align: left;
+	white-space: nowrap;
+}
+
+ul {
+	list-style-type: none;
 }
 
 header {
@@ -45,6 +63,155 @@ nav li a:hover {
 	text-decoration: underline;
 }
 
+.product-image {
+	width: 270px;
+}
+
+.best-seller {
+	color: red;
+	font-size: 16px;
+}
+
+img.list-rating {
+	width: 45%;
+}
+
+.list-name {
+	font-weight: bold;
+}
+
+.list-price {
+	font-weight: bold;
+	color: red;
+}
+
+.list-container {
+	display: flex;
+	margin: 25px;
+	align-content: center;
+}
+
+.list-image {
+	flex: 1;
+	display: inline;
+	border-bottom: 1px;
+	border-bottom-style: solid;
+}
+
+.list-details {
+	flex: 1;
+	display: inline;
+	border-bottom: 1px;
+	border-bottom-style: solid;
+	font-size: 20px;
+	text-align: left;
+}
+
+.content-container {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	margin: 30px;
+}
+
+.tile-container {
+	height: 400px;
+	width: 330px;
+}
+
+
+.tile-details {
+	text-align: center;
+	font-size: 20px;
+}
+
+
+.table-price {
+	font-size: 20px;
+	color: #b10001;
+	font-weight: normal;
+}
+
+.table-best-seller {
+	color: red;
+	font-size: 14px;
+}
+
+tr.shaded {
+	background-color: #e1dde6;
+}
+
+tr.shaded > th {
+	background-color: white;
+	padding: 3px;
+}
+
+#productTable {
+	border-collapse: collapse;
+	border-spacing: 20px;
+	font-size: 18px;
+	font-weight: lighter;	
+	padding: 10px;
+	margin: 10px;
+}
+
+.detail-container {
+	display: flex;
+}
+
+.detail-product-image {
+	flex: 1;
+	display: inline;
+}
+
+.detail-product-info {
+	flex: 2;
+	display: inline;
+	text-align: left;
+	font-size: 18px;
+	font-weight: lighter;
+}
+
+.detail-title {
+	font-size: 20px;
+	font-weight: bold;
+}
+
+.detail-best-seller {
+	color: red;
+	font-weight: bold;
+	font-size: 16px;	
+}
+
+.detail-price {
+	font-size: 22px;
+	font-weight: normal;
+	color: #b10001;
+}
+
+.detail-rating {
+	width: 25%;
+}
+
+p.detail-description {
+	margin-left: 40px;
+	margin-right: 40px;
+	font-size: 18px;
+	font-weight: lighter;
+}
+
+img.rating {
+	width: 40%;
+}
+
+img.tile-product-image {
+	height: 185px;
+}
+
+img.table-product-image {
+	width: 120px;
+}
+
 section {
 	clear: both;
 	display: block;
@@ -56,3 +223,5 @@ section {
 	background-color: #FFF;
 	border-radius: 7px;
 }
+
+

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Product List View</title>
+    <link rel="stylesheet" href="css/site.css" />
+</head>
+<body>
+    <header>
+        <h1>MVC Exercises - Views Part 2: Models</h1>        
+    </header>
+    <nav>
+        <ul>
+        	<c:url var="listLayout" value="/productList" />
+            <li><a href="${listLayout}">List Layout</a></li>
+            
+            <c:url var="tileLayout" value="/productTiles" />
+            <li><a href="${tileLayout}">Tile Layout</a></li>
+            
+            <c:url var="tableLayout" value="/productTable" />
+            <li><a href="${tableLayout}">Table Layout</a></li>
+        </ul>
+        
+    </nav>

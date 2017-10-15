@@ -9,7 +9,16 @@ public class Exercises {
 	 arrayCount9([1, 9, 9, 3, 9]) → 3
 	 */
 	public int arrayCount9(int[] nums) {
-		return 0;
+		int counterNine = 0;
+		
+		for (int i = 0; i < nums.length; i++) {
+			if (nums[i] == 9) {
+				counterNine++;
+			}
+		}
+		System.out.println("There are " +counterNine + " nines");
+		return counterNine;
+		
 	}
 
 	/*
@@ -19,6 +28,12 @@ public class Exercises {
 	 arrayFront9([1, 2, 3, 4, 5]) → false
 	 */
 	public boolean arrayFront9(int[] nums) {
+		
+		for (int i = 0; i < nums.length; i++) {
+			if ((nums[i] == 9) && (i < 4)) {
+				return true;
+			}
+		} 
 		return false;
 	}
 
@@ -29,6 +44,12 @@ public class Exercises {
 	 array123([1, 1, 2, 1, 2, 3]) → true
 	 */
 	public boolean array123(int[] nums) {
+		
+		for (int i = 1; i < nums.length; i++) {
+			if ((nums[i - 1] == 1) && (nums[i] == 2) && (nums[i + 1] == 3)) {
+				return true;
+			}
+		}
 		return false;
 	}
 	
