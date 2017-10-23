@@ -33,7 +33,7 @@ public class SquirrelPartyController {
 	
 	@RequestMapping(path="/review", method=RequestMethod.GET)
 	public String displayReviewInput(ModelMap modelHolder) {
-		if (! modelHolder.containsAttribute("signUp")) {
+		if (! modelHolder.containsAttribute("review")) {
 			modelHolder.put("review", new Review());
 		}
 		return "review";
