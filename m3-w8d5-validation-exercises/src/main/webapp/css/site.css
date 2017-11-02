@@ -9,12 +9,55 @@
     padding-right: 15px;
 }
 
+.error {
+	color: red;
+}
+
 /* Set width on the form input elements since they're 100% wide by default */
 input,
 select,
 textarea {
-    max-width: 280px;
+    max-width: 400px;
+    border-radius: 5px;
+    border-style: solid;
+    border-width: 1px;
+    padding: 5px;
 }
 
+#email {
+	width: 280px;
+}
 
+#password {
+	width: 280px;
+}
+
+label {
+	margin-bottom: 0px;
+}
+.form-container {
+	display: flex;
+	padding: 1px;
+}
+
+.email-container {
+	flex: 1;
+	padding:2px;
+	margin: 5px 0px 5px 0px;
+}
+
+.password-container {
+	flex: 1;
+	padding: 2px;
+	margin: 5px 0px 5px 0px;
+}
+
+.login-button {
+	flex: 1;
+	background-color: #3fa8f7;
+	border-radius: 5px;
+	color: white;
+	border-style: none;
+	padding: 5px 10px 5px 10px;
+}
 
