@@ -4,7 +4,12 @@
 
 <script type="text/javascript">
 	$(document).ready(function () {
-	
+		$.validator.addMethod('uppercase', function(value) {
+			return value.match(/[A-Z]/);
+		}); 
+		$.validator.addMethod('lowercase', function(value) {
+			return value.match(/[a-z]/);
+		});
 		$("form").validate({
 			
 			rules : {
@@ -12,14 +17,23 @@
 					required : true
 				},
 				password : {
-					required : true
+					required : true,
+					minlength : 15,
+					uppercase : true,
+					lowercase : true,
+					
 				},
 				confirmPassword : {
 					required : true,		
 					equalTo : "#password"  
 				}
 			},
-			messages : {			
+			messages : {	
+				password:  {
+					minlength: "Password was too short.  It should be at least 15 characters",
+					uppercase: "Password must contain Uppercase letters",
+					lowercase: "Password must contain lowercase letters",
+				},
 				confirmPassword : {
 					equalTo : "Passwords do not match"
 				}

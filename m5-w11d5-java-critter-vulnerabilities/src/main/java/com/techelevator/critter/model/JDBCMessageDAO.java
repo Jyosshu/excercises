@@ -1,7 +1,6 @@
 package com.techelevator.critter.model;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 import javax.sql.DataSource;
@@ -39,6 +38,11 @@ public class JDBCMessageDAO implements MessageDAO {
 		message.setId(id);
 		jdbcTemplate.update("INSERT INTO message(message_id, sender_name, receiver_name, message_text, private, create_date) VALUES (?,?,?,?,?,?)",
 							id, message.getFromUsername(), message.getToUsername(), message.getText(), message.isPrivate(), message.getCreateTime());
+	}
+	
+	public void deleteMessage(Long id) {
+		String sqlDeleteMessage = "DELETE FROM message WHERE message_id = ?";
+		jdbcTemplate.update(sqlDeleteMessage, id);
 	}
 	
 	@Override

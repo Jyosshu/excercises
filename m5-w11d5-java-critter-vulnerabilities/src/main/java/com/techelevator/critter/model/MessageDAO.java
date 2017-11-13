@@ -7,6 +7,8 @@ public interface MessageDAO {
 	public List<Message> getPublicMessages(int limit);
 
 	public void saveMessage(Message message);
+	
+	public void deleteMessage(Long id);
 
 	public List<Message> searchByUsername(String userName);
 

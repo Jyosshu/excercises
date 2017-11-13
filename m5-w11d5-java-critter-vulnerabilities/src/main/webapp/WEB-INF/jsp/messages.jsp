@@ -9,6 +9,11 @@
 		<li class="message">
 			<span class="message-text">${message.text}</span>
 			<time class="timeago" datetime="${message.createTime}">${message.createTime}</time>
+			<c:url var="deleteMessage" value="/deleteMessage"/>
+			<form method="POST" action="${deleteMessage}"> 
+				<input type="hidden" name="messageId" value="${message.id}"/>
+				<input type="submit" value="DELETE"/>
+			</form>
 		</li>
 	</c:forEach>
 </ol>
