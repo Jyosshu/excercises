@@ -9,18 +9,18 @@
 			<c:url var="messageHref" value="/messages">
 				<c:param name="userName" value="${message.fromUsername}" />
 			</c:url>
-			<span class="username"><a href="${messageHref}">${message.fromUsername}</a></span>
-			<span class="message-text">${message.text}</span>
-			<time class="timeago" datetime="${message.createTime}">${message.createTime}</time>
+			<span class="username"><a href="${messageHref}"><c:out value="${message.fromUsername}" /> </a></span>
+			<span class="message-text"> <c:out value="${message.text}" /> </span>
+			<time class="timeago" datetime="<c:out value="${message.createTime}" /> "><c:out value="${message.createTime}" /> </time>
 			
-			<c:url var="deleteMessage" value="/deleteMessage"/>
-			
-			<form method="POST" action="${deleteMessage}"> 
-				<input type="hidden" name="id" value="${message.id}"/>
-				<input type="hidden" name="fromUsername" value="${message.fromUsername}"/>
-				<input type="submit" value="DELETE"/>
-			</form>
-
+			<c:if test="${message.fromUsername == currentUser}">
+				<c:url var="deleteMessage" value="/deleteMessage"/>
+				<form method="POST" action="${deleteMessage}"> 
+					<input type="hidden" name="id" value=" <c:out value="${message.id}"/> "/>
+					<input type="hidden" name="fromUsername" value=" <c:out value="${message.fromUsername}"/> "/>
+					<input class="btn btn-default button" type="submit" value="DELETE"/>
+				</form>
+			</c:if>
 		</li>
 	</c:forEach>
 </ol>

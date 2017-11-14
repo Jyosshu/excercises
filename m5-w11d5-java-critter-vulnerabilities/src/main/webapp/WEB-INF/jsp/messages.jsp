@@ -7,8 +7,8 @@
 <ol class="message-list">
 	<c:forEach items="${messages}" var="message">
 		<li class="message">
-			<span class="message-text">${message.text}</span>
-			<time class="timeago" datetime="${message.createTime}">${message.createTime}</time>
+			<span class="message-text"><c:out value="${message.text}" /> </span>
+			<time class="timeago" datetime=" <c:out value="${message.createTime}" /> "><c:out value="${message.createTime}" /></time>
 			<c:url var="deleteMessage" value="/deleteMessage"/>
 			<form method="POST" action="${deleteMessage}"> 
 				<input type="hidden" name="messageId" value="${message.id}"/>

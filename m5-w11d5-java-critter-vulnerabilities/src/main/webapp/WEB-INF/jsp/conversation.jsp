@@ -2,7 +2,7 @@
 
 <c:import url="/WEB-INF/jsp/header.jsp" />
 
-<h2>Private Conversation with ${conversation.withUser}</h2>
+<h2>Private Conversation with <c:out value="${conversation.withUser}"/></h2>
 
 <ol class="message-list">
 	<c:forEach items="${conversation.messages}" var="message">
@@ -15,9 +15,9 @@
 			</c:otherwise>
 		</c:choose>
 		<li class="message ${fromto}">
-			<span class="username">${message.fromUsername}</span>
-			<span class="message-text">${message.text}</span>
-			<time class="timeago" datetime="${message.createTime}">${message.createTime}</time>
+			<span class="username"><c:out value="${message.fromUsername}" /></span>
+			<span class="message-text"><c:out value="${message.text}" /></span>
+			<time class="timeago" datetime=" <c:out value="${message.createTime}"/> ">${message.createTime}</time>
 		</li>
 	</c:forEach>
 </ol>

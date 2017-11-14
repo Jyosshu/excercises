@@ -25,10 +25,10 @@ public class JDBCUserDAO implements UserDAO {
 	public boolean searchForUsernameAndPassword(String userName, String password) {
 		String sqlSearchForUser = "SELECT * "+
 							      "FROM app_user "+
-							      "WHERE UPPER(user_name) = '"+userName.toUpperCase()+"' "+
-							      "AND password = '"+password+"'";
+							      "WHERE UPPER(user_name) = ? "+
+							      "AND password = ?";
 		
-		return jdbcTemplate.queryForRowSet(sqlSearchForUser).next();
+		return jdbcTemplate.queryForRowSet(sqlSearchForUser, userName.toUpperCase(), password).next();
 	}
 
 	@Override
